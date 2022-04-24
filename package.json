@@ -32,7 +32,7 @@
     "dayjs": "^1.11.0",
     "env-cmd": "^10.1.0",
     "framer-motion": "^6.2.1",
-    "next": "^12.1.4",
+    "next": "^12.1.0",
     "next-compose-plugins": "^2.2.1",
     "next-transpile-modules": "^9.0.0",
     "nprogress": "^0.2.0",
