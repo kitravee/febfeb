@@ -31,7 +31,6 @@ jobs:
 
       - name: Cache yarn
         uses: actions/cache@v3.0.2
-        cache: 'npm'
         with:
           # A list of files, directories, and wildcard patterns to cache and restore
           path: ${{ steps.yarn-cache.outputs.dir }}
