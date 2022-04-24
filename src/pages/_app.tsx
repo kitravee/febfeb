@@ -1,4 +1,5 @@
 import { EmotionCache } from '@emotion/cache';
+import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
 import { Router } from 'next/router';
 import nProgress from 'nprogress';
@@ -26,7 +27,11 @@ interface CustomAppProps extends AppProps {
   Component: PageComponent;
 }
 
-function MyApp({ Component, pageProps, emotionCache }: CustomAppProps) {
+function MyApp({
+  Component,
+  pageProps: { session, ...pageProps },
+  emotionCache,
+}: CustomAppProps) {
   const getLayout = Component.getLayout ?? ((page) => page);
   const renderComponent = getLayout(<Component {...pageProps} />);
   const [queryClient] = useState(() => {
@@ -34,11 +39,13 @@ function MyApp({ Component, pageProps, emotionCache }: CustomAppProps) {
   });
 
   return (
-    <EmotionCacheProvider emotionCache={emotionCache}>
-      <QueryClientProvider client={queryClient}>
-        <MainThemeProvider>{renderComponent}</MainThemeProvider>
-      </QueryClientProvider>
-    </EmotionCacheProvider>
+    <SessionProvider refetchInterval={5 * 60} session={session}>
+      <EmotionCacheProvider emotionCache={emotionCache}>
+        <QueryClientProvider client={queryClient}>
+          <MainThemeProvider>{renderComponent}</MainThemeProvider>
+        </QueryClientProvider>
+      </EmotionCacheProvider>
+    </SessionProvider>
   );
 }
 
