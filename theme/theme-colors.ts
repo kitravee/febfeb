@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys-fix/sort-keys-fix */
 export const grey = {
   900: '#2B3445', // Main Text
   800: '#373F50', // Paragraph
