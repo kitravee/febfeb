@@ -13,12 +13,12 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { signIn, signOut, useSession } from 'next-auth/react';
+import Image from 'next/image';
 import router from 'next/router';
 import { useCallback } from 'react';
 
 import { useAnchorElement } from '@/hooks/useAnchorElement';
 
-import style from './style';
 import { SwipeableSlideDrawer } from './swipeable-slide-drawer';
 
 const settings = ['Logout'];
@@ -155,16 +155,24 @@ export const ResponsiveMainAppBar: React.FC<ResponsiveMainAppBarProps> = ({
               </Menu>
             </Box>
           ) : status === 'unauthenticated' ? (
-            <Box
-              sx={{ flexGrow: 0 }}
-              onClick={() => {
-                signIn('google', { callbackUrl: `/team`, redirect: false });
-              }}
-            >
-              <style.GoogleButton color="primary" variant="contained">
-                <style.GoogleIcon src="./logo/social-media/icons8-google-48.png"></style.GoogleIcon>
-                <label style={{ cursor: 'pointer' }}> Login With Google</label>
-              </style.GoogleButton>
+            <Box sx={{ flexGrow: 0 }}>
+              <Button
+                color="primary"
+                startIcon={
+                  <Image
+                    alt="google"
+                    height="28px"
+                    src="/logo/social-media/icons8-google-48.png"
+                    width="28px"
+                  />
+                }
+                variant="outlined"
+                onClick={() => {
+                  signIn('google', { callbackUrl: `/team`, redirect: false });
+                }}
+              >
+                Login With Google
+              </Button>
             </Box>
           ) : null}
         </Toolbar>
