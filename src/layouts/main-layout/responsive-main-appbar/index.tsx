@@ -18,6 +18,7 @@ import { useCallback } from 'react';
 
 import { useAnchorElement } from '@/hooks/useAnchorElement';
 
+import style from './style';
 import { SwipeableSlideDrawer } from './swipeable-slide-drawer';
 
 const settings = ['Logout'];
@@ -160,9 +161,10 @@ export const ResponsiveMainAppBar: React.FC<ResponsiveMainAppBarProps> = ({
                 signIn('google', { callbackUrl: `/team`, redirect: false });
               }}
             >
-              <Button color="primary" variant="contained">
-                Google Login
-              </Button>
+              <style.GoogleButton color="primary" variant="contained">
+                <style.GoogleIcon src="./logo/social-media/icons8-google-48.png"></style.GoogleIcon>
+                <label style={{ cursor: 'pointer' }}> Login With Google</label>
+              </style.GoogleButton>
             </Box>
           ) : null}
         </Toolbar>
