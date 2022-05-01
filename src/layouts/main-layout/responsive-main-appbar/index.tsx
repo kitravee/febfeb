@@ -171,7 +171,7 @@ export const ResponsiveMainAppBar: React.FC<ResponsiveMainAppBarProps> = ({
                   signIn('google', { callbackUrl: `/team`, redirect: false });
                 }}
               >
-                <label style={{ cursor: 'pointer' }}> Login With Google</label>
+                Login With Google
               </Button>
             </Box>
           ) : null}
