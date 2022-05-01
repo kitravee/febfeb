@@ -3,7 +3,7 @@
 
 echo '🤔 ./husky/pre-commit'
 
-yarn check-format
+# yarn check-format
 # yarn check-lint
 # yarn check-types
 # yarn build
