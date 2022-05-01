@@ -9,13 +9,36 @@ on:
 jobs:
   all-cli-check:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
+      - name: Get Yarn cache path
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Checkout v3
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v3
         with:
-          node-version: '16.13'
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+
+      - name: Cache yarn
+        uses: actions/cache@v3.0.2
+        with:
+          # A list of files, directories, and wildcard patterns to cache and restore
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          # An explicit key for restoring and saving the cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+
       - run: mv .env.example .env
-      - run: yarn install
+      - run: yarn install --frozen-lockfile
       # - run: yarn test:jest
       - run: yarn check-lint
       - run: yarn check-format

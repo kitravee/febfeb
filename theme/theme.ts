@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys-fix/sort-keys-fix */
 import { createTheme, Theme } from '@mui/material/styles';
 
 import {

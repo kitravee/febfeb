@@ -34,12 +34,12 @@
       "jsx": true
     }
   },
-  "plugins": ["sort-keys-fix", "import", "react"],
+  "plugins": [/* "sort-keys-fix", */ "import", "react"],
 
   "rules": {
     "no-use-before-define": "off",
     "no-plusplus": "off",
-    "sort-keys-fix/sort-keys-fix": "warn",
+    // "sort-keys-fix/sort-keys-fix": "warn",
     "no-console": [
       2,
       {
