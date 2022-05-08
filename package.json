@@ -9,6 +9,7 @@
     "build:test": "env-cmd -f .env.test.local next build",
     "build": "next build",
     "start": "next start",
+    "analyze": "ANALYZE=true next build",
     "lint": "next lint",
     "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check .",
