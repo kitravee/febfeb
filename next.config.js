@@ -11,7 +11,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 //   '@mui/icons-material',
 // ]);
 
-const nextPlugins = [[withBundleAnalyzer]];
+const nextPlugins = [withBundleAnalyzer];
 
 const nextConfig = {
   reactStrictMode: true,
