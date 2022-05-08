@@ -37,6 +37,7 @@
   "plugins": [/* "sort-keys-fix", */ "import", "react"],
 
   "rules": {
+    "@next/next/no-img-element": "off",
     "no-use-before-define": "off",
     "no-plusplus": "off",
     // "sort-keys-fix/sort-keys-fix": "warn",
