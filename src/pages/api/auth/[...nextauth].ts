@@ -1,4 +1,4 @@
-import NextAuth, { Session } from 'next-auth';
+import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
 import { linkGqlAccount } from './link-gql-account';
@@ -34,10 +34,6 @@ export default NextAuth({
         token.accessToken = account.id_token;
       }
       return token;
-    },
-
-    async session({ token }) {
-      return token as Session;
     },
   },
 });
