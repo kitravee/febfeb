@@ -1,9 +1,10 @@
-import NextAuth from 'next-auth';
+import NextAuth, { Session } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
+import { linkGqlAccount } from './link-gql-account';
+
 export default NextAuth({
-  debug: true,
-  // Configure one or more authentication providers
+  // debug: true,
   providers: [
     GoogleProvider({
       authorization: {
@@ -17,4 +18,26 @@ export default NextAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
   ],
+  jwt: {
+    secret: process.env.JWT_SECRET as string,
+  },
+
+  events: {
+    async signIn(message) {
+      await linkGqlAccount(message.user.email as string);
+    },
+  },
+
+  callbacks: {
+    async jwt({ token, account }) {
+      if (account) {
+        token.accessToken = account.id_token;
+      }
+      return token;
+    },
+
+    async session({ token }) {
+      return token as Session;
+    },
+  },
 });
