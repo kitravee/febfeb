@@ -17,6 +17,7 @@ import Image from 'next/image';
 import router from 'next/router';
 import { useCallback } from 'react';
 
+// import Link from '@/components/link';
 import { useAnchorElement } from '@/hooks/useAnchorElement';
 
 import { SwipeableSlideDrawer } from './swipeable-slide-drawer';
@@ -29,7 +30,7 @@ export type NavMenuList = {
   name: string;
 };
 
-const list: NavMenuList[] = [
+const navlist: NavMenuList[] = [
   { href: '/team', icon: <PeopleOutlineIcon />, name: 'Team' },
 ];
 
@@ -75,44 +76,51 @@ export const ResponsiveMainAppBar: React.FC<ResponsiveMainAppBarProps> = ({
           <Typography
             noWrap
             component="div"
-            sx={{ display: { md: 'flex', xs: 'none' } }}
-            variant="h6"
+            sx={{
+              display: { md: 'flex', xs: 'none' },
+              fontWeight: 'medium',
+              flexGrow: 1,
+            }}
+            variant="h5"
           >
-            Store
+            FebFeb
           </Typography>
-
           <Box sx={{ display: { md: 'none', xs: 'flex' }, flexGrow: 1 }}>
-            <SwipeableSlideDrawer anchor="left" list={list}>
+            <SwipeableSlideDrawer anchor="left" list={navlist}>
               <IconButton aria-haspopup="true" color="inherit" size="large">
                 <MenuIcon />
               </IconButton>
             </SwipeableSlideDrawer>
           </Box>
-
           <Typography
             noWrap
             component="div"
             sx={{ display: { md: 'none', xs: 'flex' }, flexGrow: 1 }}
             variant="h6"
           >
-            Store
+            FebFeb
           </Typography>
 
+          {/* TODO: Team section
           <Box sx={{ display: { md: 'flex', xs: 'none' }, flexGrow: 1 }}>
-            {list.map(({ name, href }) => (
+            {navlist.map(({ name, href }) => (
               <Button
                 key={name}
+                disableElevation
+                component={Link}
+                href={href}
                 size="large"
-                sx={{ color: 'primary', display: 'block' }}
-                onClick={() => {
-                  router.push(href);
+                sx={{
+                  color: 'secondary',
+                  display: 'block',
+                  borderRadius: '8px',
                 }}
+                variant="contained"
               >
                 {name}
               </Button>
             ))}
-          </Box>
-
+          </Box> */}
           {status === 'loading' ? (
             <Box>loading</Box>
           ) : status === 'authenticated' ? (
