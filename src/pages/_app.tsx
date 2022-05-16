@@ -39,7 +39,11 @@ function MyApp({
   });
 
   return (
-    <SessionProvider refetchInterval={5 * 60} session={session}>
+    <SessionProvider
+      refetchInterval={5 * 60}
+      // refetchOnWindowFocus={false}
+      session={session}
+    >
       <EmotionCacheProvider emotionCache={emotionCache}>
         <QueryClientProvider client={queryClient}>
           <MainThemeProvider>{renderComponent}</MainThemeProvider>

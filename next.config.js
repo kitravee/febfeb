@@ -11,7 +11,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 //   '@mui/icons-material',
 // ]);
 
-const nextPlugins = [[withBundleAnalyzer]];
+const nextPlugins = [withBundleAnalyzer];
 
 const nextConfig = {
   reactStrictMode: true,
@@ -20,8 +20,9 @@ const nextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 7,
     /* use as template string only */
     /* to avoid error Array of strings received invalid values (, ) */
-    domains: ['res.cloudinary.com'],
+    domains: ['res.cloudinary.com', 'lh3.googleusercontent.com'],
+    formats: ['image/webp'],
   },
 };
 
-module.exports = withPlugins([nextPlugins, nextConfig]);
+module.exports = withPlugins([nextConfig, nextPlugins]);
