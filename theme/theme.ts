@@ -144,6 +144,13 @@ const historyLogTemplate = createTheme({
     },
   },
   components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: '10px',
+        },
+      },
+    },
     MuiCssBaseline: {
       styleOverrides: {
         '#nprogress': {
