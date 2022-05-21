@@ -29,7 +29,7 @@ export const RouterLink = forwardRef<HTMLAnchorElement, NextLinkComposedProps>(
       replace,
       scroll,
       shallow,
-      prefetch,
+      prefetch = false,
       children,
       ...rest
     } = props;
