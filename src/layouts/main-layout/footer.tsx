@@ -24,19 +24,8 @@ export const Footer: React.FC<FooterProps> = () => {
               </Typography>
             </Grid>
             <Grid item sm={8} xs={12}>
-              <Grid
-                container
-                alignItems="flex-start"
-                direction="row"
-                justifyContent="space-between"
-              >
-                <Grid
-                  item
-                  alignItems="flex-start"
-                  direction="column"
-                  sm={3}
-                  xs={6}
-                >
+              <Grid container direction="row" justifyContent="space-between">
+                <Grid item sm={3} xs={6}>
                   <Grid container direction="column">
                     <Grid item>
                       <Typography
@@ -55,13 +44,7 @@ export const Footer: React.FC<FooterProps> = () => {
                     </Grid>
                   </Grid>
                 </Grid>
-                <Grid
-                  item
-                  alignItems="flex-start"
-                  direction="column"
-                  sm={3}
-                  xs={6}
-                >
+                <Grid item direction="column" sm={3} xs={6}>
                   <Grid container direction="column">
                     <Grid item>
                       <Typography
@@ -80,13 +63,7 @@ export const Footer: React.FC<FooterProps> = () => {
                     </Grid>
                   </Grid>
                 </Grid>
-                <Grid
-                  item
-                  alignItems="flex-start"
-                  direction="column"
-                  sm={3}
-                  xs={6}
-                >
+                <Grid item sm={3} xs={6}>
                   <Grid container direction="column">
                     <Grid item>
                       <Typography
@@ -105,13 +82,7 @@ export const Footer: React.FC<FooterProps> = () => {
                     </Grid>
                   </Grid>
                 </Grid>
-                <Grid
-                  item
-                  alignItems="flex-start"
-                  direction="column"
-                  sm={3}
-                  xs={6}
-                >
+                <Grid item sm={3} xs={6}>
                   <Grid container direction="column">
                     <Grid item>
                       <Typography
