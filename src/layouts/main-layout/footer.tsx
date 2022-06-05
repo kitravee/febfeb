@@ -1,9 +1,6 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { Container, Grid, IconButton, Typography } from '@mui/material';
+import { Container, IconButton, Typography } from '@mui/material';
 import Box from '@mui/system/Box';
-
-import BoxGradient from '@/components/box-gradient';
-import Link from '@/components/link';
 
 interface FooterProps {
   className?: string;
@@ -12,7 +9,7 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = () => {
   return (
     <footer>
-      <BoxGradient>
+      {/* <BoxGradient>
         <Container sx={{ pb: 2, pt: 4 }}>
           <Grid container>
             <Grid item sm={4} xs={12}>
@@ -105,7 +102,7 @@ export const Footer: React.FC<FooterProps> = () => {
             </Grid>
           </Grid>
         </Container>
-      </BoxGradient>
+      </BoxGradient> */}
 
       <Box sx={{ backgroundColor: 'primary.dark' }}>
         <Container sx={{ pb: 1, pt: 1 }}>
