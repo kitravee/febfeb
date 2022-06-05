@@ -43,7 +43,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-query": "^3.34.19",
-    "sharp": "^0.30.3"
+    "sharp": "^0.30.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
