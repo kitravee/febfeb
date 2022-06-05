@@ -1,0 +1,60 @@
+.orb {
+  width: 150px;
+  height: 100px;
+  display: inline-block;
+  transition: all 0.2s ease-out;
+  opacity: 0.5;
+  margin: 0 30px;
+}
+
+.orb:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  cursor: pointer;
+}
+
+.orb2 {
+  width: 150px;
+  margin: 0 30px;
+  transition: all 0.2s ease-out;
+  opacity: 0.5;
+}
+.orb2:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  cursor: pointer;
+}
+
+.marquee {
+  height: 100px;
+  width: '100%';
+  min-width: 1600px;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.marqueeinner {
+  display: block;
+  width: 200%;
+  position: absolute;
+  animation: marquee 15s linear infinite;
+}
+
+.marqueeinner:hover {
+  animation-play-state: paused;
+}
+
+/*.half {
+  float: left;
+  width: 10%;
+}*/
+
+@keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
